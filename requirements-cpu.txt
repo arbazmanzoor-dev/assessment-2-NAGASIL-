@@ -1,0 +1,10 @@
+# Minimal CPU environment actually used (Python 3.11, macOS arm64 / Linux x86_64).
+# Replaces the original 120-package requirements.txt for running bprun_{random,maxinf,maxdef,gasil}.py
+tensorflow==2.15.1
+numpy<2
+scipy
+networkx==2.8.8
+matplotlib
+gym==0.26.2
+tqdm
+pandas

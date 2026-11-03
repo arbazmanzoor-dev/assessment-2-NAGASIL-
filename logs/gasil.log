@@ -1,0 +1,776 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+WARNING:tensorflow:From /Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/.venv/lib/python3.11/site-packages/tensorflow/python/compat/v2_compat.py:108: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:23: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_1 = tf.layers.dense(inputs=self.obs, units=128, activation=tf.tanh)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:24: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_2 = tf.layers.dense(inputs=layer_1, units=128, activation=tf.tanh)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:25: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_3 = tf.layers.dense(inputs=layer_2, units=act_space.n, activation=tf.tanh)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:26: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  self.act_probs = tf.layers.dense(inputs=layer_3, units=act_space.n, activation=tf.nn.softmax)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:29: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_1 = tf.layers.dense(inputs=self.obs, units=128, activation=tf.tanh)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:30: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_2 = tf.layers.dense(inputs=layer_1, units=128, activation=tf.tanh)
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/policy_net.py:31: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  self.v_preds = tf.layers.dense(inputs=layer_2, units=1, activation=None)
+WARNING:tensorflow:From /Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/.venv/lib/python3.11/site-packages/tensorflow/python/util/dispatch.py:1260: multinomial (from tensorflow.python.ops.random_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.random.categorical` instead.
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/discriminator.py:74: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_1 = tf.layers.dense(inputs=input, units=128, activation=tf.nn.leaky_relu, name='layer1')
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/discriminator.py:75: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_2 = tf.layers.dense(inputs=layer_1, units=128, activation=tf.nn.leaky_relu, name='layer2')
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/discriminator.py:76: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  layer_3 = tf.layers.dense(inputs=layer_2, units=128, activation=tf.nn.leaky_relu, name='layer3')
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/network_models/discriminator.py:81: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  prob = tf.layers.dense(inputs=dropout_layer, units=1, activation=tf.sigmoid, name='prob')
+2026-11-03 11:53:49.701716: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+/Users/arbazmanzoor/Library/Application Support/Claude/scratch-workspaces/8205d881-6a24-4e5f-a5ac-da7b3512471e/80cafae0-2104-4a6a-9374-cd4aaac44a87/scratch-2026-11-03-fb381f/NAGASIL/EoN/simulation.py:4498: FutureWarning: adjacency_matrix will return a scipy.sparse array instead of a matrix in Networkx 3.0.
+  adjacency_mat = nx.linalg.graphmatrix.adjacency_matrix(G).transpose().tocoo()
+[0. 0. 0. ... 0. 0. 0.]
+Discrete(250)
+(1250,)
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 1/200 [00:00<00:32,  6.16it/s]  2%|▏         | 3/200 [00:00<00:25,  7.67it/s]  2%|▎         | 5/200 [00:00<00:22,  8.84it/s]  4%|▎         | 7/200 [00:00<00:20,  9.62it/s]  4%|▍         | 9/200 [00:00<00:18, 10.12it/s]  6%|▌         | 11/200 [00:01<00:19,  9.89it/s]  6%|▌         | 12/200 [00:01<00:19,  9.78it/s]  7%|▋         | 14/200 [00:01<00:18, 10.22it/s]  8%|▊         | 16/200 [00:01<00:17, 10.36it/s]  9%|▉         | 18/200 [00:01<00:17, 10.54it/s] 10%|█         | 20/200 [00:01<00:16, 10.85it/s] 11%|█         | 22/200 [00:02<00:16, 10.87it/s] 12%|█▏        | 24/200 [00:02<00:15, 11.07it/s] 13%|█▎        | 26/200 [00:02<00:15, 11.17it/s] 14%|█▍        | 28/200 [00:02<00:15, 11.22it/s] 15%|█▌        | 30/200 [00:02<00:15, 11.18it/s][1.78136826, -0.198907807, -1.5824604, 0.819887757, 0.793662488] loss is:
+ 16%|█▌        | 32/200 [00:03<00:16, 10.35it/s][1.89967716, -0.215158328, -1.68451881, 0.80670917, 0.812915683] loss is:
+ 17%|█▋        | 34/200 [00:03<00:16,  9.85it/s][1.81773067, -0.228271425, -1.5894593, 0.796216726, 0.79433769] loss is:
+[1.83791852, -0.244965017, -1.59295356, 0.783079624, 0.792932451] loss is:
+ 18%|█▊        | 36/200 [00:03<00:15, 10.26it/s] 19%|█▉        | 38/200 [00:03<00:15, 10.48it/s][1.7387557, -0.263877243, -1.47487843, 0.768443584, 0.770137] loss is:
+ 20%|██        | 40/200 [00:03<00:15, 10.50it/s][1.5865047, -0.284208834, -1.30229592, 0.753018439, 0.727664888] loss is:
+[1.60025442, -0.30409, -1.29616439, 0.738248587, 0.72584033] loss is:
+ 21%|██        | 42/200 [00:04<00:14, 10.58it/s][1.54175818, -0.324914455, -1.21684372, 0.72309041, 0.70193404] loss is:
+ 22%|██▏       | 44/200 [00:04<00:14, 10.54it/s][1.58817089, -0.348033816, -1.2401371, 0.706651866, 0.71018219] loss is:
+ 23%|██▎       | 46/200 [00:04<00:14, 10.44it/s][1.5497061, -0.370406479, -1.17929959, 0.691096723, 0.691080213] loss is:
+ 24%|██▍       | 48/200 [00:04<00:14, 10.40it/s][1.31354332, -0.394375116, -0.919168174, 0.674829602, 0.599150121] loss is:
+[1.50911558, -0.418143302, -1.0909723, 0.659051418, 0.663547218] loss is:
+ 25%|██▌       | 50/200 [00:04<00:14, 10.33it/s][1.47482455, -0.442604452, -1.03222013, 0.643199563, 0.643175423] loss is:
+ 26%|██▌       | 52/200 [00:05<00:14, 10.56it/s][1.37282395, -0.468034387, -0.904789627, 0.627157, 0.594559252] loss is:
+ 27%|██▋       | 54/200 [00:05<00:14,  9.98it/s][1.46043861, -0.491332978, -0.969105661, 0.612765253, 0.619738877] loss is:
+[1.3587563, -0.516686559, -0.842069805, 0.597502053, 0.566606641] loss is:
+ 28%|██▊       | 56/200 [00:05<00:14,  9.88it/s][1.389153, -0.542243421, -0.846909642, 0.582528353, 0.570877492] loss is:
+ 29%|██▉       | 58/200 [00:05<00:13, 10.33it/s] 30%|███       | 60/200 [00:05<00:13, 10.59it/s][1.31652987, -0.568950415, -0.747579455, 0.567347646, 0.524667382] loss is:
+[1.33298302, -0.588718712, -0.744264364, 0.556236744, 0.524245] loss is:
+ 31%|███       | 62/200 [00:06<00:13, 10.19it/s][1.2470479, -0.614759684, -0.632288158, 0.542035341, 0.467788041] loss is:
+[1.46471953, -0.63890624, -0.825813234, 0.529216886, 0.560371816] loss is:
+ 32%|███▏      | 64/200 [00:06<00:13, 10.42it/s][1.40996, -0.65556246, -0.754397511, 0.52064079, 0.529379] loss is:
+ 33%|███▎      | 66/200 [00:06<00:12, 10.75it/s][1.37979221, -0.669935644, -0.70985657, 0.513197482, 0.508058071] loss is:
+[1.37770438, -0.697360039, -0.680344343, 0.499211609, 0.493192673] loss is:
+ 34%|███▍      | 68/200 [00:06<00:12, 11.00it/s][1.39450049, -0.716966391, -0.677534103, 0.48977676, 0.491778582] loss is:
+[1.29399407, -0.724375, -0.56961906, 0.486217052, 0.433545291] loss is:
+ 35%|███▌      | 70/200 [00:06<00:11, 11.23it/s][1.36176074, -0.73605454, -0.625706196, 0.480530471, 0.464560062] loss is:
+ 36%|███▌      | 72/200 [00:06<00:11, 11.25it/s][1.33500099, -0.74600172, -0.588999331, 0.475897789, 0.4448497] loss is:
+ 37%|███▋      | 74/200 [00:07<00:11, 11.20it/s][1.35063529, -0.759224236, -0.591411114, 0.469525695, 0.44597581] loss is:
+[1.43007398, -0.766858637, -0.663215399, 0.465980887, 0.484358102] loss is:
+ 38%|███▊      | 76/200 [00:07<00:10, 11.52it/s][1.43835425, -0.776686, -0.661668241, 0.461576521, 0.483862281] loss is:
+ 39%|███▉      | 78/200 [00:07<00:10, 11.44it/s][1.40414453, -0.778115571, -0.626028955, 0.460939974, 0.464347035] loss is:
+ 40%|████      | 80/200 [00:07<00:10, 11.11it/s][1.34208238, -0.778073311, -0.56400907, 0.460936189, 0.430825979] loss is:
+ 41%|████      | 82/200 [00:07<00:10, 11.13it/s][1.40566063, -0.778137505, -0.627523065, 0.461115122, 0.465773404] loss is:
+[1.47836971, -0.781617522, -0.696752191, 0.459339857, 0.498994] loss is:
+ 42%|████▏     | 84/200 [00:07<00:10, 10.86it/s][1.29943013, -0.786427438, -0.513002694, 0.457099289, 0.40110296] loss is:
+[1.38492191, -0.773816288, -0.611105621, 0.463157207, 0.45689711] loss is:
+ 43%|████▎     | 86/200 [00:08<00:10, 10.55it/s][1.34649754, -0.776205897, -0.570291698, 0.461837977, 0.43424052] loss is:
+[1.36455309, -0.771356821, -0.593196273, 0.464076877, 0.446925938] loss is:
+ 44%|████▍     | 88/200 [00:08<00:10, 10.70it/s][1.44126213, -0.761408389, -0.679853737, 0.468906939, 0.492900401] loss is:
+[1.41831279, -0.767693579, -0.650619268, 0.465807617, 0.477819383] loss is:
+ 45%|████▌     | 90/200 [00:08<00:10, 10.32it/s][1.38408613, -0.762468576, -0.621617615, 0.468252, 0.462508708] loss is:
+[1.39648199, -0.748624146, -0.647857904, 0.474717677, 0.475753576] loss is:
+ 46%|████▌     | 92/200 [00:08<00:10, 10.40it/s][1.29531968, -0.7372756, -0.558044076, 0.480177939, 0.426399678] loss is:
+[1.3337667, -0.739406, -0.594360709, 0.479078978, 0.447975963] loss is:
+ 47%|████▋     | 94/200 [00:08<00:09, 10.91it/s][1.29506516, -0.733433068, -0.561632097, 0.482016027, 0.429632872] loss is:
+[1.36043906, -0.715755641, -0.64468348, 0.490585744, 0.473115295] loss is:
+ 48%|████▊     | 96/200 [00:09<00:09, 11.15it/s][1.34016919, -0.714407623, -0.625761569, 0.491204739, 0.465053618] loss is:
+[1.353405, -0.705656409, -0.64774853, 0.495553, 0.476110607] loss is:
+ 49%|████▉     | 98/200 [00:09<00:09, 11.07it/s][1.31885183, -0.699648559, -0.619203269, 0.498593599, 0.461546421] loss is:
+[1.33515155, -0.690392554, -0.644759, 0.503129125, 0.474695295] loss is:
+ 50%|█████     | 100/200 [00:09<00:09, 10.98it/s][1.43441761, -0.674762607, -0.759655, 0.511385798, 0.530741] loss is:
+ 51%|█████     | 102/200 [00:09<00:09, 10.80it/s][1.29795647, -0.677004755, -0.620951772, 0.509919107, 0.462269485] loss is:
+[1.37157965, -0.671102405, -0.700477302, 0.512940705, 0.503513336] loss is:
+ 52%|█████▏    | 104/200 [00:09<00:08, 11.24it/s][1.27533197, -0.663696349, -0.611635566, 0.516725, 0.457141578] loss is:
+[1.32480025, -0.659217894, -0.665582299, 0.519013047, 0.485838532] loss is:
+ 53%|█████▎    | 106/200 [00:10<00:09, 10.19it/s][1.36083579, -0.654412806, -0.706422925, 0.521567762, 0.506213844] loss is:
+[1.36643279, -0.650778592, -0.715654194, 0.523482084, 0.51006043] loss is:
+ 54%|█████▍    | 108/200 [00:10<00:09,  9.91it/s][1.29381204, -0.648023725, -0.645788252, 0.524944484, 0.475523144] loss is:
+[1.33703446, -0.637373686, -0.699660718, 0.530890584, 0.503058791] loss is:
+ 55%|█████▌    | 110/200 [00:10<00:08, 10.09it/s][1.34731805, -0.645530522, -0.701787531, 0.526293576, 0.502292514] loss is:
+ 56%|█████▌    | 112/200 [00:10<00:08, 10.36it/s][1.37633371, -0.644316196, -0.732017517, 0.526970506, 0.518655181] loss is:
+[1.32479286, -0.643689215, -0.681103647, 0.527342558, 0.492565751] loss is:
+ 57%|█████▋    | 114/200 [00:10<00:08, 10.55it/s][1.41211104, -0.643272638, -0.768838346, 0.5276106, 0.535672605] loss is:
+[1.29805994, -0.64371258, -0.65434736, 0.527426243, 0.479642093] loss is:
+ 58%|█████▊    | 116/200 [00:11<00:07, 10.62it/s][1.38097286, -0.644345522, -0.736627281, 0.527145445, 0.520191133] loss is:
+[1.24425125, -0.645814419, -0.598436773, 0.526417196, 0.449079454] loss is:
+ 59%|█████▉    | 118/200 [00:11<00:07, 10.63it/s][1.33359385, -0.652028441, -0.681565344, 0.523349106, 0.49400273] loss is:
+ 60%|██████    | 120/200 [00:11<00:07, 10.76it/s][1.3613503, -0.658058643, -0.703291595, 0.520154774, 0.504428148] loss is:
+[1.37252128, -0.656697333, -0.715823948, 0.52101022, 0.510986626] loss is:
+ 61%|██████    | 122/200 [00:11<00:07, 10.95it/s][1.41060805, -0.658475399, -0.752132714, 0.520083725, 0.527497292] loss is:
+[1.34523797, -0.655284882, -0.689953, 0.521629214, 0.498137921] loss is:
+ 62%|██████▏   | 124/200 [00:11<00:06, 11.23it/s][1.32788086, -0.661242366, -0.666638494, 0.518861592, 0.486105204] loss is:
+[1.55713606, -0.665287137, -0.891848862, 0.516751885, 0.586832702] loss is:
+ 63%|██████▎   | 126/200 [00:11<00:06, 11.02it/s][1.29156947, -0.671499372, -0.6200701, 0.51357609, 0.461836487] loss is:
+[1.39107358, -0.670101643, -0.720971942, 0.514412582, 0.511977732] loss is:
+ 64%|██████▍   | 128/200 [00:12<00:06, 10.58it/s][1.30955219, -0.669428945, -0.640123308, 0.514647245, 0.472661823] loss is:
+ 65%|██████▌   | 130/200 [00:12<00:06, 10.58it/s][1.38188994, -0.667864859, -0.71402508, 0.515399098, 0.509940922] loss is:
+ 66%|██████▌   | 132/200 [00:12<00:06, 10.88it/s][1.2993722, -0.67789197, -0.621480227, 0.510656953, 0.462336183] loss is:
+[1.29537797, -0.674930632, -0.620447338, 0.5121122, 0.461483389] loss is:
+ 67%|██████▋   | 134/200 [00:12<00:06, 10.10it/s][1.3284843, -0.68338424, -0.645100057, 0.507885396, 0.474459201] loss is:
+[1.39493537, -0.683342636, -0.711592734, 0.50796, 0.506808341] loss is:
+ 68%|██████▊   | 136/200 [00:12<00:06, 10.24it/s][1.31781244, -0.687020183, -0.63079226, 0.506448269, 0.467450202] loss is:
+[1.40786457, -0.681346536, -0.726518, 0.508954823, 0.514739275] loss is:
+ 69%|██████▉   | 138/200 [00:13<00:05, 10.35it/s][1.34479213, -0.687111437, -0.657680631, 0.506345689, 0.48181057] loss is:
+[1.38502049, -0.690461755, -0.694558799, 0.504671514, 0.498698235] loss is:
+ 70%|███████   | 140/200 [00:13<00:05, 10.55it/s][1.31576133, -0.685334444, -0.630426824, 0.507492483, 0.465899855] loss is:
+[1.33245158, -0.690634966, -0.641816616, 0.50456661, 0.473433256] loss is:
+ 71%|███████   | 142/200 [00:13<00:05, 10.43it/s][1.30991411, -0.681950271, -0.627963841, 0.509154141, 0.466013432] loss is:
+[1.29863906, -0.691383719, -0.607255399, 0.504362345, 0.454796523] loss is:
+ 72%|███████▏  | 144/200 [00:13<00:05, 10.42it/s][1.38981903, -0.684883654, -0.704935372, 0.507856727, 0.504105926] loss is:
+[1.22519708, -0.683191597, -0.542005479, 0.508773386, 0.417930752] loss is:
+ 73%|███████▎  | 146/200 [00:13<00:05, 10.12it/s][1.29621243, -0.672418118, -0.623794317, 0.514222145, 0.463969231] loss is:
+ 74%|███████▍  | 148/200 [00:14<00:05, 10.27it/s][1.36845815, -0.677816212, -0.69064194, 0.511209846, 0.49737975] loss is:
+ 75%|███████▌  | 150/200 [00:14<00:05,  9.22it/s][1.37795687, -0.681397676, -0.696559191, 0.509675205, 0.500610292] loss is:
+[1.32450986, -0.680016, -0.644493878, 0.510060668, 0.474555522] loss is:
+ 76%|███████▌  | 152/200 [00:14<00:05,  9.46it/s][1.38239157, -0.67041707, -0.711974502, 0.515429437, 0.507700741] loss is:
+ 76%|███████▋  | 153/200 [00:14<00:04,  9.46it/s][1.37882495, -0.673259914, -0.705565035, 0.51402241, 0.50449723] loss is:
+ 78%|███████▊  | 155/200 [00:14<00:04,  9.90it/s][1.40215433, -0.661078155, -0.741076171, 0.52055341, 0.513992429] loss is:
+ep_reward: 2.9565115604007097
+1.0
+Done  10  actions.
+ep_reward: 2.385966701933097
+1.0
+Done  13  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  11  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  15  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  11  actions.
+ep_reward: 2.4769384801388235
+1.0
+Done  10  actions.
+ep_reward: 1.4961092271270973
+1.0
+Done  18  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  13  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  12  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  14  actions.
+ep_reward: 0.3915622029391729
+1.0
+Done  12  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  18  actions.
+ep_reward: 1.287354413264987
+1.0
+Done  18  actions.
+ep_reward: 2.2256240518579173
+1.0
+Done  17  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  17  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  17  actions.
+ep_reward: 2.577021938695806
+1.0
+Done  11  actions.
+ep_reward: 2.3025850929940455
+1.0
+Done  13  actions.
+ep_reward: 3.4420193761824103
+1.0
+Done  11  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  8  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  7  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  17  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  7  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  8  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  13  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  8  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  14  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  8  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  12  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  9  actions.
+ep_reward: 0.3974969384589874
+1.0
+Done  9  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  11  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  7  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  9  actions.
+ep_reward: 2.385966701933097
+1.0
+Done  7  actions.
+ep_reward: 2.2256240518579173
+1.0
+Done  9  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  11  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  14  actions.
+ep_reward: 2.0874737133771
+1.0
+Done  14  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  16  actions.
+ep_reward: 2.120263536200091
+1.0
+Done  13  actions.
+ep_reward: 2.577021938695806
+1.0
+Done  11  actions.
+ep_reward: 2.3025850929940455
+1.0
+Done  12  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  16  actions.
+ep_reward: 0.8580218237501793
+1.0
+Done  6  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  9  actions.
+ep_reward: 0.40947312950570314
+1.0
+Done  10  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  9  actions.
+ep_reward: 0.3509769228240947
+1.0
+Done  9  actions.
+ep_reward: 1.995100393246085
+1.0
+Done  10  actions.
+ep_reward: 1.6713133161521878
+1.0
+Done  15  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  10  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  12  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  8  actions.
+ep_reward: 0.6539264674066639
+1.0
+Done  14  actions.
+ep_reward: 0.36816932336446756
+1.0
+Done  10  actions.
+ep_reward: 3.2188758248682006
+1.0
+Done  8  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  9  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  11  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  11  actions.
+ep_reward: 1.443923473956527
+1.0
+Done  16  actions.
+ep_reward: 0.7678707267558817
+1.0
+Done  9  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  14  actions.
+ep_reward: 2.120263536200091
+1.0
+Done  11  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  3  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  10  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  7  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  11  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  6  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  8  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  11  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  9  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 0.35667494393873245
+1.0
+Done  19  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  9  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  11  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  7  actions.
+ep_reward: 0.37396644104879345
+1.0
+Done  8  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  15  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  3  actions.
+ep_reward: 0.6694306539426292
+1.0
+Done  10  actions.
+ep_reward: 2.3434070875143007
+1.0
+Done  11  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  8  actions.
+ep_reward: 0.4338645826298623
+1.0
+Done  12  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  10  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  10  actions.
+ep_reward: 0.3509769228240947
+1.0
+Done  17  actions.
+ep_reward: 1.8578992717326
+1.0
+Done  15  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  13  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  18  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  13  actions.
+ep_reward: 0.3509769228240947
+1.0
+Done  19  actions.
+ep_reward: 0.3624056186477175
+1.0
+Done  18  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  13  actions.
+ep_reward: 2.3434070875143007
+1.0
+Done  10  actions.
+ep_reward: 2.120263536200091
+1.0
+Done  18  actions.
+ep_reward: 1.9661128563728327
+1.0
+Done  14  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  10  actions.
+ep_reward: 1.995100393246085
+1.0
+Done  18  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  11  actions.
+ep_reward: 2.3434070875143007
+1.0
+Done  15  actions.
+ep_reward: 0.37396644104879345
+1.0
+Done  19  actions.
+ep_reward: 2.3434070875143007
+1.0
+Done  16  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  13  actions.
+ep_reward: 0.6386589952758756
+1.0
+Done  15  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  14  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  13  actions.
+ep_reward: 1.8578992717326
+1.0
+Done  15  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  11  actions.
+ep_reward: 2.577021938695806
+1.0
+Done  11  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  14  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  11  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  14  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  11  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  13  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  18  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  14  actions.
+ep_reward: 1.5702171992808192
+1.0
+Done  14  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  11  actions.
+ep_reward: 0.9675840262617056
+1.0
+Done  19  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  15  actions.
+ep_reward: 0.34531118528841737
+1.0
+Done  19  actions.
+ep_reward: 2.120263536200091
+1.0
+Done  14  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  15  actions.
+ep_reward: 0.8029620465671519
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  18  actions.
+ep_reward: 3.2188758248682006
+1.0
+Done  12  actions.
+ep_reward: 2.1892564076870427
+1.0
+Done  19  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  15  actions.
+ep_reward: 0.34531118528841737
+1.0
+Done  19  actions.
+ep_reward: 0.9364934391916745
+1.0
+Done  18  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  19  actions.
+ep_reward: 2.385966701933097
+1.0
+Done  11  actions.
+ep_reward: 2.8134107167600364
+1.0
+Done  17  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  8  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  18  actions.
+ep_reward: 2.3025850929940455
+1.0
+Done  11  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  18  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  19  actions.
+ep_reward: 1.6502599069543555
+1.0
+Done  17  actions.
+ep_reward: 2.1541650878757723
+1.0
+Done  18  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  13  actions.
+ep_reward: 0.35667494393873245
+1.0
+Done  18  actions.
+ep_reward: 2.577021938695806
+1.0
+Done  18  actions.
+ep_reward: 1.9661128563728327
+1.0
+Done  19  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  14  actions.
+ep_reward: 1.1776554960085626
+1.0
+Done  11  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  12  actions.
+ep_reward: 2.385966701933097
+1.0
+Done  15  actions.
+ep_reward: 0.3915622029391729
+1.0
+Done  5  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  8  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  15  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  14  actions.
+ep_reward: 3.2188758248682006 78%|███████▊  | 157/200 [00:15<00:04, 10.16it/s][1.28865242, -0.671120167, -0.617532313, 0.514789104, 0.459835202] loss is:
+[1.37919044, -0.659011841, -0.720178545, 0.5218364, 0.512438893] loss is:
+ 80%|███████▉  | 159/200 [00:15<00:04, 10.00it/s][1.37546098, -0.652809918, -0.722651064, 0.524912775, 0.507898808] loss is:
+[1.30122554, -0.66280371, -0.638421834, 0.519861519, 0.470738143] loss is:
+ 80%|████████  | 161/200 [00:15<00:03, 10.07it/s][1.48611891, -0.663312614, -0.822806299, 0.519520283, 0.558817446] loss is:
+[1.39413404, -0.655967116, -0.738167, 0.522906125, 0.515924335] loss is:
+ 82%|████████▏ | 163/200 [00:15<00:03, 10.22it/s][1.30995607, -0.666641176, -0.643314958, 0.517811179, 0.473858446] loss is:
+ 82%|████████▎ | 165/200 [00:15<00:03, 10.37it/s][1.34877062, -0.649353385, -0.699417293, 0.526423812, 0.501433909] loss is:
+[1.38696861, -0.659013152, -0.72795552, 0.521656096, 0.514064372] loss is:
+ 84%|████████▎ | 167/200 [00:15<00:03, 10.70it/s][1.30786085, -0.681783617, -0.626077235, 0.509898424, 0.464942545] loss is:
+[1.24378133, -0.66513449, -0.578646779, 0.518886864, 0.43923685] loss is:
+ 84%|████████▍ | 169/200 [00:16<00:02, 10.68it/s][1.33838534, -0.671840072, -0.666545272, 0.514960945, 0.484570235] loss is:
+[1.30372024, -0.678503811, -0.625216424, 0.511704504, 0.462861598] loss is:
+ 86%|████████▌ | 171/200 [00:16<00:02, 10.50it/s][1.66609335, -0.664958417, -1.00113487, 0.518768191, 0.623246968] loss is:
+ 86%|████████▋ | 173/200 [00:16<00:02, 10.79it/s][1.44722176, -0.671945751, -0.775276, 0.515050173, 0.534232557] loss is:
+[1.37616181, -0.683228493, -0.692933381, 0.509364307, 0.499534845] loss is:
+ 88%|████████▊ | 175/200 [00:16<00:02, 10.43it/s][1.42235458, -0.69903928, -0.723315299, 0.501691103, 0.511375606] loss is:
+ 88%|████████▊ | 177/200 [00:16<00:02, 10.24it/s][1.31959748, -0.694815397, -0.624782145, 0.503808439, 0.464249134] loss is:
+[1.43799639, -0.700697184, -0.737299204, 0.500829101, 0.518915713] loss is:
+ 90%|████████▉ | 179/200 [00:17<00:02, 10.42it/s][1.3048538, -0.707704902, -0.597148895, 0.497937262, 0.448306352] loss is:
+[1.47701073, -0.705412626, -0.771598041, 0.498652548, 0.532485187] loss is:
+ 90%|█████████ | 181/200 [00:17<00:01, 10.45it/s][1.33846962, -0.700978816, -0.637490809, 0.501282275, 0.470087886] loss is:
+ 92%|█████████▏| 183/200 [00:17<00:01, 10.01it/s][1.33043396, -0.714737415, -0.615696549, 0.493874699, 0.457887948] loss is:
+[1.57988453, -0.724404335, -0.855480194, 0.48899281, 0.569970489] loss is:
+ 92%|█████████▎| 185/200 [00:17<00:01, 10.24it/s][1.40940166, -0.712545812, -0.696855843, 0.49535358, 0.497830689] loss is:
+[1.41407, -0.704107463, -0.709962547, 0.499432862, 0.501679122] loss is:
+ 94%|█████████▎| 187/200 [00:17<00:01, 10.49it/s][1.54281664, -0.718300283, -0.824516296, 0.491769314, 0.556422055] loss is:
+[1.36743629, -0.706553578, -0.660882711, 0.497779429, 0.480608553] loss is:
+ 94%|█████████▍| 189/200 [00:18<00:01, 10.66it/s][1.42462993, -0.717262864, -0.707367122, 0.492357105, 0.506447792] loss is:
+[1.36710918, -0.708768189, -0.658341, 0.496820807, 0.479733139] loss is:
+ 96%|█████████▌| 191/200 [00:18<00:00, 10.82it/s][1.29761553, -0.720899463, -0.576716125, 0.491300195, 0.437500566] loss is:
+ 96%|█████████▋| 193/200 [00:18<00:00, 10.93it/s][1.24548697, -0.706820786, -0.538666129, 0.498254091, 0.415707022] loss is:
+[1.30898345, -0.697811484, -0.611171961, 0.502737284, 0.455502898] loss is:
+ 98%|█████████▊| 195/200 [00:18<00:00, 10.98it/s][1.56577563, -0.699419856, -0.866355717, 0.50199455, 0.571971118] loss is:
+[1.42472613, -0.707612336, -0.717113793, 0.498081475, 0.506936073] loss is:
+ 98%|█████████▊| 197/200 [00:18<00:00, 11.07it/s][1.44134772, -0.700443804, -0.740903914, 0.501793742, 0.51961726] loss is:
+[1.40999746, -0.701179445, -0.708818078, 0.50084269, 0.507258415] loss is:
+100%|█████████▉| 199/200 [00:18<00:00, 11.07it/s][1.42062306, -0.690170467, -0.730452538, 0.507214129, 0.515872061] loss is:
+100%|██████████| 200/200 [00:19<00:00, 10.50it/s]
+
+1.0
+Done  12  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  13  actions.
+ep_reward: 0.47160491061270937
+1.0
+Done  10  actions.
+ep_reward: 2.2256240518579173
+1.0
+Done  17  actions.
+ep_reward: 2.4769384801388235
+1.0
+Done  14  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  12  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  17  actions.
+ep_reward: 2.2633643798407643
+1.0
+Done  10  actions.
+ep_reward: 3.2188758248682006
+1.0
+Done  9  actions.
+ep_reward: 2.1892564076870427
+1.0
+Done  10  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  7  actions.
+ep_reward: 1.0555527992076628
+1.0
+Done  17  actions.
+ep_reward: 0.5516476182862459
+1.0
+Done  7  actions.
+ep_reward: 0.4277107170554841
+1.0
+Done  14  actions.
+ep_reward: 2.5257286443082556
+1.0
+Done  8  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  9  actions.
+ep_reward: 3.7297014486341915
+1.0
+Done  9  actions.
+ep_reward: 1.783791299578878
+1.0
+Done  14  actions.
+ep_reward: 1.995100393246085
+1.0
+Done  12  actions.
+ep_reward: 0.6539264674066639
+1.0
+Done  13  actions.
+ep_reward: 3.7297014486341915
+1.0
+Done  8  actions.
+ep_reward: 2.3025850929940455
+1.0
+Done  14  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  12  actions.
+ep_reward: 2.2256240518579173
+1.0
+Done  18  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  10  actions.
+ep_reward: 3.575550768806933
+1.0
+Done  10  actions.
+ep_reward: 2.430418464503931
+1.0
+Done  9  actions.
+ep_reward: 2.6882475738060303
+1.0
+Done  10  actions.
+ep_reward: 2.9565115604007097
+1.0
+Done  14  actions.
+ep_reward: 2.7488721956224653
+1.0
+Done  10  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  10  actions.
+ep_reward: 2.385966701933097
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  10  actions.
+ep_reward: 3.7297014486341915
+1.0
+Done  7  actions.
+ep_reward: 2.577021938695806
+1.0
+Done  15  actions.
+ep_reward: 1.0328245481301066
+1.0
+Done  16  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  15  actions.
+ep_reward: 2.8824035882469876
+1.0
+Done  12  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  7  actions.
+ep_reward: 3.123565645063876
+1.0
+Done  10  actions.
+ep_reward: 3.036554268074246
+1.0
+Done  8  actions.
+ep_reward: 2.631089159966082
+1.0
+Done  13  actions.
