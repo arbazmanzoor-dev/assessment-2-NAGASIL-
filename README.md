@@ -44,7 +44,7 @@ Baselines (`bprun_*.py`):
 macOS, Apple Silicon (arm64), CPU only, no conda. TF 1.13 cannot be installed there, so I used [`uv`](https://github.com/astral-sh/uv) with Python 3.11 and only the packages the code actually imports:
 
 ```bash
-git clone cd assessment-2-NAGASIL- && cd NAGASIL
+cd assessment-2-NAGASIL- 
 uv venv -p 3.11 .venv
 uv pip install -p .venv/bin/python -r requirements-cpu.txt
 # (plain pip works too: python3.11 -m venv .venv && .venv/bin/pip install -r requirements-cpu.txt)
